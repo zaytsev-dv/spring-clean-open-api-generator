@@ -1,0 +1,202 @@
+2023-04-06T14:18:22.319+03:00  INFO 69968 --- [main] c.e.a.a.CleanArchitectureApplication     : Starting CleanArchitectureApplication using Java 17.0.6 with PID 69968 (/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes started by sladkiy_bubalex in /Users/sladkiy_bubalex/my_tutorials/clean_architecture)
+2023-04-06T14:18:22.320+03:00  INFO 69968 --- [main] c.e.a.a.CleanArchitectureApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-04-06T14:18:22.511+03:00  INFO 69968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T14:18:22.519+03:00  INFO 69968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-04-06T14:18:22.692+03:00  INFO 69968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T14:18:22.696+03:00  INFO 69968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T14:18:22.696+03:00  INFO 69968 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06T14:18:22.729+03:00  INFO 69968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T14:18:22.730+03:00  INFO 69968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 395 ms
+2023-04-06T14:18:22.773+03:00  INFO 69968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T14:18:22.844+03:00  INFO 69968 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61874b9d
+2023-04-06T14:18:22.845+03:00  INFO 69968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T14:18:22.996+03:00  INFO 69968 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-06T14:18:23.101+03:00  INFO 69968 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-06T14:18:23.126+03:00  INFO 69968 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-06T14:18:23.154+03:00  INFO 69968 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T14:18:23.169+03:00  INFO 69968 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T14:18:23.264+03:00  INFO 69968 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-06T14:18:23.361+03:00  INFO 69968 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T14:18:23.364+03:00  INFO 69968 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:18:23.368+03:00  WARN 69968 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'categoryUseCaseImpl' defined in file [/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes/com/example/architecture/application/usecase/impls/CategoryUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.architecture.application.presenter.CategoryPresenter' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-04-06T14:18:23.368+03:00  INFO 69968 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:18:23.369+03:00  INFO 69968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-06T14:18:23.371+03:00  INFO 69968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-06T14:18:23.371+03:00  INFO 69968 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-06T14:18:23.376+03:00  INFO 69968 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-06T14:18:23.383+03:00 ERROR 69968 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.architecture.application.usecase.impls.CategoryUseCaseImpl required a bean of type 'com.example.architecture.application.presenter.CategoryPresenter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.architecture.application.presenter.CategoryPresenter' in your configuration.
+
+2023-04-06T14:22:34.301+03:00  INFO 70361 --- [main] c.e.a.a.CleanArchitectureApplication     : Starting CleanArchitectureApplication using Java 17.0.6 with PID 70361 (/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes started by sladkiy_bubalex in /Users/sladkiy_bubalex/my_tutorials/clean_architecture)
+2023-04-06T14:22:34.303+03:00  INFO 70361 --- [main] c.e.a.a.CleanArchitectureApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-04-06T14:22:34.501+03:00  INFO 70361 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T14:22:34.509+03:00  INFO 70361 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-04-06T14:22:34.682+03:00  INFO 70361 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T14:22:34.686+03:00  INFO 70361 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T14:22:34.686+03:00  INFO 70361 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06T14:22:34.719+03:00  INFO 70361 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T14:22:34.719+03:00  INFO 70361 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 401 ms
+2023-04-06T14:22:34.765+03:00  INFO 70361 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T14:22:34.833+03:00  INFO 70361 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@429aeac1
+2023-04-06T14:22:34.834+03:00  INFO 70361 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T14:22:34.978+03:00  INFO 70361 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-06T14:22:35.098+03:00  INFO 70361 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-06T14:22:35.123+03:00  INFO 70361 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-06T14:22:35.151+03:00  INFO 70361 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T14:22:35.166+03:00  INFO 70361 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T14:22:35.261+03:00  INFO 70361 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-06T14:22:35.353+03:00  INFO 70361 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T14:22:35.356+03:00  INFO 70361 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:22:35.361+03:00  WARN 70361 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'categoryUseCaseImpl' defined in file [/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes/com/example/architecture/application/usecase/impls/CategoryUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.architecture.adapter.out.repository.gateways.CategoryDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-04-06T14:22:35.361+03:00  INFO 70361 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:22:35.362+03:00  INFO 70361 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-06T14:22:35.363+03:00  INFO 70361 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-06T14:22:35.364+03:00  INFO 70361 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-06T14:22:35.368+03:00  INFO 70361 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-06T14:22:35.375+03:00 ERROR 70361 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.example.architecture.application.usecase.impls.CategoryUseCaseImpl required a bean of type 'com.example.architecture.adapter.out.repository.gateways.CategoryDao' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.architecture.adapter.out.repository.gateways.CategoryDao' in your configuration.
+
+2023-04-06T14:23:59.921+03:00  INFO 70503 --- [main] c.e.a.a.CleanArchitectureApplication     : Starting CleanArchitectureApplication using Java 17.0.6 with PID 70503 (/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes started by sladkiy_bubalex in /Users/sladkiy_bubalex/my_tutorials/clean_architecture)
+2023-04-06T14:23:59.922+03:00  INFO 70503 --- [main] c.e.a.a.CleanArchitectureApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-04-06T14:24:00.110+03:00  INFO 70503 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T14:24:00.118+03:00  INFO 70503 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-04-06T14:24:00.300+03:00  INFO 70503 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T14:24:00.304+03:00  INFO 70503 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T14:24:00.304+03:00  INFO 70503 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06T14:24:00.339+03:00  INFO 70503 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T14:24:00.339+03:00  INFO 70503 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 403 ms
+2023-04-06T14:24:00.383+03:00  INFO 70503 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T14:24:00.451+03:00  INFO 70503 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@429aeac1
+2023-04-06T14:24:00.455+03:00  INFO 70503 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T14:24:00.598+03:00  INFO 70503 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-06T14:24:00.725+03:00  INFO 70503 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-06T14:24:00.757+03:00  INFO 70503 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-06T14:24:00.784+03:00  INFO 70503 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T14:24:00.799+03:00  INFO 70503 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T14:24:00.895+03:00  INFO 70503 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-06T14:24:00.986+03:00  INFO 70503 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T14:24:00.989+03:00  INFO 70503 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:24:00.993+03:00  WARN 70503 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'categoryUseCaseImpl' defined in file [/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes/com/example/architecture/application/usecase/impls/CategoryUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.architecture.adapter.out.repository.gateways.CategoryDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-04-06T14:24:00.993+03:00  INFO 70503 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:24:00.994+03:00  INFO 70503 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-06T14:24:00.996+03:00  INFO 70503 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-06T14:24:00.996+03:00  INFO 70503 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-06T14:24:01.001+03:00  INFO 70503 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-06T14:24:01.008+03:00 ERROR 70503 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.example.architecture.application.usecase.impls.CategoryUseCaseImpl required a bean of type 'com.example.architecture.adapter.out.repository.gateways.CategoryDao' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.architecture.adapter.out.repository.gateways.CategoryDao' in your configuration.
+
+2023-04-06T14:24:48.668+03:00  INFO 70579 --- [main] c.e.a.a.CleanArchitectureApplication     : Starting CleanArchitectureApplication using Java 17.0.6 with PID 70579 (/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes started by sladkiy_bubalex in /Users/sladkiy_bubalex/my_tutorials/clean_architecture)
+2023-04-06T14:24:48.669+03:00  INFO 70579 --- [main] c.e.a.a.CleanArchitectureApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-04-06T14:24:48.863+03:00  INFO 70579 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T14:24:48.870+03:00  INFO 70579 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-04-06T14:24:49.044+03:00  INFO 70579 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T14:24:49.047+03:00  INFO 70579 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T14:24:49.047+03:00  INFO 70579 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06T14:24:49.080+03:00  INFO 70579 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T14:24:49.080+03:00  INFO 70579 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 396 ms
+2023-04-06T14:24:49.123+03:00  INFO 70579 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T14:24:49.187+03:00  INFO 70579 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@28e0e464
+2023-04-06T14:24:49.188+03:00  INFO 70579 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T14:24:49.283+03:00  INFO 70579 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-06T14:24:49.408+03:00  INFO 70579 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-06T14:24:49.433+03:00  INFO 70579 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-06T14:24:49.460+03:00  INFO 70579 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T14:24:49.475+03:00  INFO 70579 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T14:24:49.564+03:00  INFO 70579 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-06T14:24:49.655+03:00  INFO 70579 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T14:24:49.659+03:00  INFO 70579 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:24:49.674+03:00  WARN 70579 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-06T14:24:49.802+03:00  WARN 70579 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-04-06T14:24:49.803+03:00  INFO 70579 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:24:49.804+03:00  INFO 70579 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-06T14:24:49.805+03:00  INFO 70579 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-06T14:24:49.806+03:00  INFO 70579 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-06T14:24:49.812+03:00  INFO 70579 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-06T14:24:49.818+03:00 ERROR 70579 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-04-06T14:24:57.910+03:00  INFO 70599 --- [main] c.e.a.a.CleanArchitectureApplication     : Starting CleanArchitectureApplication using Java 17.0.6 with PID 70599 (/Users/sladkiy_bubalex/my_tutorials/clean_architecture/target/classes started by sladkiy_bubalex in /Users/sladkiy_bubalex/my_tutorials/clean_architecture)
+2023-04-06T14:24:57.911+03:00  INFO 70599 --- [main] c.e.a.a.CleanArchitectureApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-04-06T14:24:58.101+03:00  INFO 70599 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T14:24:58.109+03:00  INFO 70599 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-04-06T14:24:58.282+03:00  INFO 70599 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T14:24:58.286+03:00  INFO 70599 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T14:24:58.286+03:00  INFO 70599 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06T14:24:58.320+03:00  INFO 70599 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T14:24:58.320+03:00  INFO 70599 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 394 ms
+2023-04-06T14:24:58.366+03:00  INFO 70599 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T14:24:58.433+03:00  INFO 70599 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5438c17a
+2023-04-06T14:24:58.434+03:00  INFO 70599 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T14:24:58.530+03:00  INFO 70599 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-06T14:24:58.648+03:00  INFO 70599 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-06T14:24:58.673+03:00  INFO 70599 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-06T14:24:58.700+03:00  INFO 70599 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T14:24:58.715+03:00  INFO 70599 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T14:24:58.814+03:00  INFO 70599 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-06T14:24:58.909+03:00  INFO 70599 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T14:24:58.912+03:00  INFO 70599 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:24:58.926+03:00  WARN 70599 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-06T14:24:59.057+03:00  INFO 70599 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06T14:24:59.062+03:00  INFO 70599 --- [main] c.e.a.a.CleanArchitectureApplication     : Started CleanArchitectureApplication in 1.327 seconds (process running for 1.54)
+2023-04-06T14:25:26.305+03:00  INFO 70599 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06T14:25:26.305+03:00  INFO 70599 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-06T14:25:26.306+03:00  INFO 70599 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-06T14:30:55.887+03:00  WARN 70599 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m27s334ms).
+2023-04-06T14:33:46.518+03:00  INFO 70599 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T14:33:46.519+03:00  INFO 70599 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-06T14:33:46.520+03:00  INFO 70599 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

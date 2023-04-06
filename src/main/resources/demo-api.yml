@@ -1,0 +1,515 @@
+openapi: 3.0.1
+info:
+  title: Demo application API
+  version: '1.0.0'
+servers:
+  - url: 'http://localhost:8080'
+    description: local
+  - url: 'https://example_test.com'
+    description: test
+  - url: 'https://example_prod.com'
+    description: prod
+paths:
+  /demo/account/register:
+    post:
+      tags:
+        - Account
+      operationId: registerAccount
+      description: 'Register account via google/apple token'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRegisterAccountRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRegisterAccountResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+  /demo/account/info:
+    get:
+      tags:
+        - Account
+      operationId: getAccountInfo
+      description: 'Get account info'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountInfoResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+  /demo/post:
+    post:
+      tags:
+        - Post
+      operationId: createPostOrCompetitor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePostRequest'
+        required: true
+      description: 'Post or post competitor creation'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCreatePostResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+  /demo/post/distribute/{post_id}:
+    patch:
+      tags:
+        - Post
+      operationId: distributePost
+      description: 'Distribute post'
+      parameters:
+        - name: post_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+            description: no content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+  /demo/category:
+    post:
+      tags:
+        - Category
+      operationId: createCategory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCategoryRequest'
+        required: true
+      description: 'Category creation'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCategoryResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+    get:
+      tags:
+        - Category
+      operationId: getAllCategories
+      description: 'Get all categories'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCategoryResponseList'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+  /demo/category/subscribe/{categoryId}:
+    post:
+      tags:
+        - Category
+      operationId: subscribeToCategory
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: string
+      description: 'Subscribe to category'
+      responses:
+        '204':
+          description: no content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+  /demo/tag:
+    post:
+      tags:
+        - Tag
+      operationId: createTag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTagRequest'
+        required: true
+      description: 'Tag creation'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTagResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+    get:
+      tags:
+        - Tag
+      operationId: getAllTags
+      description: 'Tag creation'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTagResponseList'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+
+  /demo/tag/subscribe/{tagId}:
+    post:
+      tags:
+        - Tag
+      operationId: subscribeToTag
+      parameters:
+        - name: tagId
+          in: path
+          required: true
+          schema:
+            type: string
+      description: 'Subscribe to tag'
+      responses:
+        '204':
+          description: no content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+  /demo/pathway/near:
+    get:
+      tags:
+        - Path Way
+      operationId: getNearPathWay
+      description: 'Find nearest path ways in 30 rm radius'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPathWayListResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDto'
+      security:
+        - bearer-key: [ ]
+        - accountLongitude: [ ]
+        - accountLatitude: [ ]
+
+components:
+  schemas:
+    GetAccountInfoResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        fio:
+          type: string
+        email:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetCategoryResponse'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetTagResponse'
+    #--------------------------------------------------------------------------------------------------------#
+    GetCategoryResponse:
+      type: object
+      properties:
+        title:
+          type: string
+        id:
+          type: string
+    #--------------------------------------------------------------------------------------------------------#
+    GetCategoryResponseList:
+      type: object
+      properties:
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetCategoryResponse'
+    #--------------------------------------------------------------------------------------------------------#
+    GetTagResponse:
+      type: object
+      properties:
+        title:
+          type: string
+        id:
+          type: string
+    #--------------------------------------------------------------------------------------------------------#
+    TagIdList:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+    #--------------------------------------------------------------------------------------------------------#
+    CategoriesIdList:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+    #--------------------------------------------------------------------------------------------------------#
+    CreatePostRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        parentPostId:
+          type: integer
+          format: int64
+        tagIds:
+          $ref: '#/components/schemas/TagIdList'
+        categoriesIds:
+          $ref: '#/components/schemas/CategoriesIdList'
+    #--------------------------------------------------------------------------------------------------------#
+    GetCreatePostResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+    #--------------------------------------------------------------------------------------------------------#
+    CreateCategoryRequest:
+      type: object
+      properties:
+        title:
+          type: string
+    #--------------------------------------------------------------------------------------------------------#
+    GetTagResponseList:
+      type: object
+      properties:
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetTagResponse'
+    #--------------------------------------------------------------------------------------------------------#
+    CreateTagRequest:
+      type: object
+      properties:
+        title:
+          type: string
+    #--------------------------------------------------------------------------------------------------------#
+    ErrorDto:
+      type: object
+      properties:
+        timestamp:
+          type: string
+        status:
+          type: integer
+          format: int32
+        error:
+          type: string
+        trace:
+          type: string
+        message:
+          type: string
+        path:
+          type: string
+    #--------------------------------------------------------------------------------------------------------#
+    GetPathWayListResponse:
+      type: object
+      properties:
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetPathWayResponse'
+    #--------------------------------------------------------------------------------------------------------#
+    GetPathWayResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        post:
+          $ref: '#/components/schemas/GetCreatePostResponse'
+        tags:
+          type: array
+          items:
+            type: string
+        categories:
+          type: array
+          items:
+            type: string
+#--------------------------------------------------------------------------------------------------------#
+    CreateRegisterAccountRequest:
+      type: object
+      properties:
+        accessToken:
+          type: string
+        providerType:
+          type: string
+          enum:
+            - GOOGLE
+            - APPLE
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+#--------------------------------------------------------------------------------------------------------#
+    CreateRegisterAccountResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+#--------------------------------------------------------------------------------------------------------#
+  securitySchemes:
+    bearer-key:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    accountLongitude:
+      type: apiKey
+      in: header
+      name: Longitude
+    accountLatitude:
+      type: apiKey
+      in: header
+      name: Latitude
